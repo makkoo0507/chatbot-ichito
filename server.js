@@ -4,8 +4,8 @@ const axios = require('axios');
 const line = require('@line/bot-sdk');
 const PORT = process.env.PORT || 3000;
 const config = {
-    channelSecret: '7ac5ecae58d3541c88f2a39e540b72bc',
-    channelAccessToken: 'W6NMZ4g7uTa0NqXViFC60Y2HhRe1F99poDBEEMNEMtZB0lsTXYIwjngDzRVjQ4nskULyEwxvs22JaZ1FXvqO9Pnq4mYzigfw0INXijKjvBS2wqRyvhIfoCEe8vamC73CVkyCIJOjKSfZ+Sz2kxhGsQdB04t89/1O/w1cDnyilFU='
+    channelSecret: process.env.LINE_CHANNEL_SECRET,
+    channelAccessToken: process.env.LINE_CHANNEL_ACCESS_TOKEN
 };
 const app = express();
 const lists = require(__dirname+'/lists');
@@ -37,7 +37,7 @@ let time = 0 ;
 // 　関数　lat,lngからURL作成、そしてconfig作成
 const createUrl = function(Lat,Lng){
     destination={lat:Lat,lng:Lng}
-    Url=`https://maps.googleapis.com/maps/api/distancematrix/json?origins=${myhouse.lat}%2C${myhouse.lng}&destinations=${destination.lat}%2C${destination.lng}&key=AIzaSyBBRU8hHgjyCd3D6oX1uaIUSbUQXpJ5wiM`
+    Url=`https://maps.googleapis.com/maps/api/distancematrix/json?origins=${myhouse.lat}%2C${myhouse.lng}&destinations=${destination.lat}%2C${destination.lng}&key=${process.env.GOOGLE_MAPS_API_KEY}`
     return Url ;
 };
 
