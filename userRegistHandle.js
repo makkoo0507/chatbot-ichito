@@ -4,8 +4,12 @@ const { google } = require('googleapis');
 const SPREADSHEET_ID = '1UOmGtPvdFLK75Jc1cuOfiWj6MTsfm5C0IQwfT_Tiwn8';
 const SHEET_NAME = 'Sheet1';
 
+const credentials = process.env.GOOGLE_CREDENTIALS_JSON
+    ? JSON.parse(process.env.GOOGLE_CREDENTIALS_JSON)
+    : require(__dirname + '/line-bot-498911-6947bbf3145d.json');
+
 const auth = new google.auth.GoogleAuth({
-    keyFile: __dirname + '/line-bot-498911-6947bbf3145d.json',
+    credentials,
     scopes: ['https://www.googleapis.com/auth/spreadsheets'],
 });
 
