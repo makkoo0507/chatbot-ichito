@@ -13,6 +13,7 @@
     "@line/bot-sdk": "^7.3.0",
     "axios": "^1.17.0",
     "express": "^4.17.1",
+    "googleapis": "^173.0.0",
     "ngrok": "^4.1.0"
   },
   "description": ""
