@@ -1,0 +1,10 @@
+name = "chatbot-ichito"
+main = "src/index.ts"
+compatibility_date = "2024-01-01"
+
+[vars]
+# 環境変数はwrangler secret putで設定する
+# LINE_CHANNEL_SECRET
+# LINE_CHANNEL_ACCESS_TOKEN
+# GOOGLE_CREDENTIALS_JSON
+# GOOGLE_MAPS_API_KEY
